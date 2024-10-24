@@ -22,7 +22,7 @@ public class ejercicio12 {
         } else if (numero2 > numero1 && numero1 > numero3){
             System.out.println(numero2);
             System.out.println(numero1);
-            sou
+
 
         }
     }
