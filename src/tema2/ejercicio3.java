@@ -1,3 +1,4 @@
+package tema2;
 import java.util.Scanner;
 
 public class ejercicio3 {
