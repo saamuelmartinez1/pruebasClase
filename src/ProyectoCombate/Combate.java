@@ -1,52 +1,39 @@
 package ProyectoCombate;
 
-
 import java.util.Scanner;
 
-public class Combate {
+public class aaa {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int opcion = 0;
-        int personaje1 = 0;
-        int personaje2 = 0;
-        int boton = 0;
+        int opcion;
+        int personaje1 = 0, personaje2 = 0;
 
-        double VidaPLayer1 = 0;
-        double VelocidadPLayer1 = 0;
-        double DefensaPLayer1 = 0;
-        double AtaquePLayer1 = 0;
-        int HabilidadP1 = 0;
-        int ultiP1 =0;
-
-
-        double VidaPLayer2 = 0;
-        double VelocidadPLayer2 = 0;
-        double DefensaPLayer2 = 0;
-        double AtaquePLayer2 = 0;
-        int HabilidadP2 = 0;
-        int ultiP2 =0;
-
-
-        System.out.println("\n" +
-                "███╗░░░███╗░█████╗░██████╗░████████╗░█████╗░██╗░░░░░  ██╗░░██╗░█████╗░███╗░░░███╗██████╗░░█████╗░████████╗\n" +
-                "████╗░████║██╔══██╗██╔══██╗╚══██╔══╝██╔══██╗██║░░░░░  ██║░██╔╝██╔══██╗████╗░████║██╔══██╗██╔══██╗╚══██╔══╝\n" +
-                "██╔████╔██║██║░░██║██████╔╝░░░██║░░░███████║██║░░░░░  █████═╝░██║░░██║██╔████╔██║██████╦╝███████║░░░██║░░░\n" +
-                "██║╚██╔╝██║██║░░██║██╔══██╗░░░██║░░░██╔══██║██║░░░░░  ██╔═██╗░██║░░██║██║╚██╔╝██║██╔══██╗██╔══██║░░░██║░░░\n" +
-                "██║░╚═╝░██║╚█████╔╝██║░░██║░░░██║░░░██║░░██║███████╗  ██║░╚██╗╚█████╔╝██║░╚═╝░██║██████╦╝██║░░██║░░░██║░░░\n" +
-                "╚═╝░░░░░╚═╝░╚════╝░╚═╝░░╚═╝░░░╚═╝░░░╚═╝░░╚═╝╚══════╝  ╚═╝░░╚═╝░╚════╝░╚═╝░░░░░╚═╝╚═════╝░╚═╝░░╚═╝░░░╚═╝░░░");
-
-
+        int vidaMaximaPlayer1 = 0, vidaMaximaPlayer2 = 0;
+        double vidaPlayer1 = 0, vidaPlayer2 = 0;
+        double velocidadPlayer1 = 0, velocidadPlayer2 = 0;
+        double defensaPlayer1 = 0, defensaPlayer2 = 0;
+        double ataquePlayer1 = 0, ataquePlayer2 = 0;
+        int ultiPlayer1 = 0, ultiPlayer2 = 0;
         do {
-            System.out.println("ingrese una opcion:");
-            System.out.println("1) Elige un personaje predterminado");
-            System.out.println("2) Crea tu propio personaje");
-            System.out.println("3) Combatir (elige primero tu personaje)");
-            System.out.println("4) Abandonar juego");
+            System.out.println("\n" +
+                    "███╗░░░███╗░█████╗░██████╗░████████╗░█████╗░██╗░░░░░  ██╗░░██╗░█████╗░███╗░░░███╗██████╗░░█████╗░████████╗\n" +
+                    "████╗░████║██╔══██╗██╔══██╗╚══██╔══╝██╔══██╗██║░░░░░  ██║░██╔╝██╔══██╗████╗░████║██╔══██╗██╔══██╗╚══██╔══╝\n" +
+                    "██╔████╔██║██║░░██║██████╔╝░░░██║░░░███████║██║░░░░░  █████═╝░██║░░██║██╔████╔██║██████╦╝███████║░░░██║░░░\n" +
+                    "██║╚██╔╝██║██║░░██║██╔══██╗░░░██║░░░██╔══██║██║░░░░░  ██╔═██╗░██║░░██║██║╚██╔╝██║██╔══██╗██╔══██║░░░██║░░░\n" +
+                    "██║░╚═╝░██║╚█████╔╝██║░░██║░░░██║░░░██║░░██║███████╗  ██║░╚██╗╚█████╔╝██║░╚═╝░██║██████╦╝██║░░██║░░░██║░░░\n" +
+                    "╚═╝░░░░░╚═╝░╚════╝░╚═╝░░╚═╝░░░╚═╝░░░╚═╝░░╚═╝╚══════╝  ╚═╝░░╚═╝░╚════╝░╚═╝░░░░░╚═╝╚═════╝░╚═╝░░╚═╝░░░╚═╝░░░");
 
+
+            System.out.println("1) Elegir un personaje predefinido");
+            System.out.println("2) Crear tu propio personaje");
+            System.out.println("3) Combatir (elige primero tus personajes)");
+            System.out.println("4) Abandonar juego");
+            System.out.print("Elige una opción: ");
             opcion = scanner.nextInt();
+
             switch (opcion) {
                 case 1:
-
+                    System.out.println("PERSONAJES DISPONIBLES:");
 
                     System.out.println("────────────────────────────────\n" +
                             "───────────────██████████───────\n" +
@@ -73,13 +60,7 @@ public class Combate {
                             "────────────────────▄████▄──██\n" +
                             "────────────────────██████───▀\n" +
                             "────────────────────▀▄▄▄▄▀\n");
-                    System.out.println("SICARIO (1)");
-                    System.out.println("Vida = 125;");
-                    System.out.println("Velocidad = 125;");
-                    System.out.println("Defensa = 125;");
-                    System.out.println("Ataque = 125;");
-                    System.out.println("robo vital =1 uso");
-
+                    System.out.println("1) Sicario - Vida: 282, Velocidad: 73, Defensa: 80, Ataque: 65");
 
                     System.out.println("─────▄██▀▀▀▀▀▀▀▀▀▀▀▀▀██▄─────\n" +
                             "────███───────────────███────\n" +
@@ -130,14 +111,7 @@ public class Combate {
                             "─██─────────████──────────██─\n" +
                             "────────────████─────────────\n" +
                             "─────────────██──────────────\n");
-
-
-                    System.out.println("ASESINO (2)");
-                    System.out.println("Vida = 215;");
-                    System.out.println("Velocidad = 122;");
-                    System.out.println("Defensa = 65;");
-                    System.out.println("Ataque = 70;");
-                    System.out.println("ataque veloz = 1 uso");
+                    System.out.println("2) Asesino - Vida: 215, Velocidad: 122, Defensa: 45, Ataque: 98");
 
 
                     System.out.println("────────▄▄▄▄▄▄▄▄▄\n" +
@@ -163,108 +137,114 @@ public class Combate {
                             "────────▌███▌███▌\n" +
                             "──────▐▀▀▀██▌█▀▀▀▌\n" +
                             "▒▒▒▒▒▒▐▄▄▄▄▄▄▄▄▄▄▌▒▒▒▒▒▒▒\n");
+                    System.out.println("3) Manolo el Curandero - Vida: 310, Velocidad: 60, Defensa: 60, Ataque: 70");
 
-
-                    System.out.println("Manolo el Curandero (3)");
-                    System.out.println("Vida = 310;");
-                    System.out.println("Velocidad = 60;");
-                    System.out.println("Defensa = 60;");
-                    System.out.println("Ataque = 98;");
-                    System.out.println("curacion= 2 usos");
-
-
-                    System.out.println("elija el personaje del jugador 1:");
+                    System.out.print("Jugador 1, elige tu personaje: ");
                     personaje1 = scanner.nextInt();
-                    System.out.println("elija el personaje del jugador 2:");
+                    System.out.print("Jugador 2, elige tu personaje: ");
                     personaje2 = scanner.nextInt();
 
-
-
                     switch (personaje1) {
-
                         case 1:
-                            System.out.println("El personaje 1 eligio al sicario");
-                            VidaPLayer1 = 282;
-                            VelocidadPLayer1 = 73;
-                            DefensaPLayer1 = 80;
-                            AtaquePLayer1 = 65;
-                            HabilidadP1 = 2;
-                            ultiP1 ++;
+                            vidaMaximaPlayer1 = 282;
+                            vidaPlayer1 = 282;
+                            velocidadPlayer1 = 73;
+                            defensaPlayer1 = 80;
+                            ataquePlayer1 = 65;
                             break;
-
                         case 2:
-                            System.out.println("El personaje 1 eligio al asesino");
-                            VidaPLayer1 = 215;
-                            VelocidadPLayer1 = 122;
-                            DefensaPLayer1 = 45;
-                            AtaquePLayer1 = 98;
-                            HabilidadP1 = 1;
-                            ultiP1 ++;
-
+                            vidaMaximaPlayer1 = 215;
+                            vidaPlayer1 = 215;
+                            velocidadPlayer1 = 122;
+                            defensaPlayer1 = 45;
+                            ataquePlayer1 = 98;
                             break;
-
                         case 3:
-
-                            System.out.println("El personaje 1 eligio a Manolo el Curandero");
-                            VidaPLayer1 = 310;
-                            VelocidadPLayer1 = 60;
-                            DefensaPLayer1 = 60;
-                            AtaquePLayer1 = 70;
-                            HabilidadP1 = 2;
-                            ultiP1 ++;
-
-
+                            vidaMaximaPlayer1 = 310;
+                            vidaPlayer1 = 310;
+                            velocidadPlayer1 = 60;
+                            defensaPlayer1 = 60;
+                            ataquePlayer1 = 70;
                             break;
-
-
                     }
 
                     switch (personaje2) {
-
                         case 1:
-                            System.out.println("El personaje 2 Eligio al sicario");
-                            VidaPLayer2 = 282;
-                            VelocidadPLayer2 = 73;
-                            DefensaPLayer2 = 80;
-                            AtaquePLayer2 = 65;
-                            HabilidadP2 = 2;
-                            ultiP2 ++;
-
+                            vidaMaximaPlayer2 = 282;
+                            vidaPlayer2 = 282;
+                            velocidadPlayer2 = 73;
+                            defensaPlayer2 = 80;
+                            ataquePlayer2 = 65;
                             break;
-
                         case 2:
-                            System.out.println("El personaje 2  eligio al asesino");
-                            VidaPLayer2 = 215;
-                            VelocidadPLayer2 = 122;
-                            DefensaPLayer2 = 45;
-                            AtaquePLayer2 = 98;
-                            HabilidadP2 = 1;
-                            ultiP2 ++;
-
+                            vidaMaximaPlayer2 = 215;
+                            vidaPlayer2 = 215;
+                            velocidadPlayer2 = 122;
+                            defensaPlayer2 = 45;
+                            ataquePlayer2 = 98;
                             break;
-
                         case 3:
-
-                            System.out.println("El personaje 2  eligio a Manolo el Curandero");
-                            VidaPLayer2 = 310;
-                            VelocidadPLayer2 = 60;
-                            DefensaPLayer2 = 60;
-                            AtaquePLayer2 = 70;
-                            HabilidadP2 = 2;
-                            ultiP2 ++;
-
-
+                            vidaMaximaPlayer2 = 310;
+                            vidaPlayer2 = 310;
+                            velocidadPlayer2 = 60;
+                            defensaPlayer2 = 60;
+                            ataquePlayer2 = 70;
                             break;
-
-
                     }
-
-
                     break;
                 case 2:
-                    break;
+                    System.out.println("CREAR PERSONAJE:");
 
+                    int vida, velocidad, defensa, ataque;
+                    boolean personajeCreado = false;
+
+                    while (!personajeCreado) {
+                        System.out.println("Por favor, asigna los atributos de tu personaje. Cada atributo debe estar entre 1 y 200, y la suma no debe exceder 500.");
+                        System.out.print("Vida: ");
+                        vida = scanner.nextInt();
+                        System.out.print("Velocidad: ");
+                        velocidad = scanner.nextInt();
+                        System.out.print("Defensa: ");
+                        defensa = scanner.nextInt();
+                        System.out.print("Ataque: ");
+                        ataque = scanner.nextInt();
+
+                        int sumaAtributos = vida + velocidad + defensa + ataque;
+
+                        if (vida < 1 || vida > 200 || velocidad < 1 || velocidad > 200 ||
+                                defensa < 1 || defensa > 200 || ataque < 1 || ataque > 200) {
+                            System.out.println("Error: Todos los atributos deben estar entre 1 y 200. Por favor, inténtalo de nuevo.");
+                        } else if (sumaAtributos > 500) {
+                            System.out.println("Error: La suma total de los atributos no puede exceder 500. Por favor, inténtalo de nuevo.");
+                        } else {
+                            System.out.println("¡Personaje creado exitosamente!");
+                            if (personaje1 == 0) {
+                                vidaMaximaPlayer1 = vida;
+                                vidaPlayer1 = vida;
+                                velocidadPlayer1 = velocidad;
+                                defensaPlayer1 = defensa;
+                                ataquePlayer1 = ataque;
+                                personaje1 = 4;
+                            } else if (personaje2 == 0) {
+                                vidaMaximaPlayer2 = vida;
+                                vidaPlayer2 = vida;
+                                velocidadPlayer2 = velocidad;
+                                defensaPlayer2 = defensa;
+                                ataquePlayer2 = ataque;
+                                personaje2 = 4;
+                            } else {
+                                System.out.println("Ambos jugadores ya tienen personajes asignados.");
+                            }
+                            personajeCreado = true;
+                        }
+                    }
+                    break;
                 case 3:
+
+                    if (vidaPlayer1 == 0 || vidaPlayer2 == 0) {
+                        System.out.println("Por favor, elige los personajes antes de combatir.");
+                        break;
+                    }
                     System.out.println("\n" +
                             "███████╗██╗░██████╗░██╗░░██╗████████╗\n" +
                             "██╔════╝██║██╔════╝░██║░░██║╚══██╔══╝\n" +
@@ -273,79 +253,109 @@ public class Combate {
                             "██║░░░░░██║╚██████╔╝██║░░██║░░░██║░░░\n" +
                             "╚═╝░░░░░╚═╝░╚═════╝░╚═╝░░╚═╝░░░╚═╝░░░");
 
-                    do{
-                        if(VelocidadPLayer1 > VelocidadPLayer2){
-                            System.out.println("comienza el turno de jugador 1");
-                            System.out.println("- pulse 1 para atacar");
-                            System.out.println("-pulse 2 para usar pocion curativa");
-                            System.out.println("pulse 3 para usar ulti(necesitas 3 ataques para poder usarla)");
-                            System.out.println("-pulse 4 para usar habilidad");
+                    int turno = (velocidadPlayer1 > velocidadPlayer2) ? 1 : 2;
+                    boolean juegoTerminado = false;
 
-                             boton = scanner.nextInt();
-                            switch (boton){
+                    while (!juegoTerminado) {
+                        System.out.println("\nEs el turno del Jugador " + turno);
+
+                        System.out.println("1) Atacar");
+                        System.out.println("2) Curarse");
+                        System.out.println("3) Usar ulti (requiere 3 ataques)");
+                        System.out.print("Elige una acción: ");
+                        int accion = scanner.nextInt();
+
+                        if (turno == 1) {
+
+                            switch (accion) {
                                 case 1:
-                                    System.out.println("jugador 1 ataco");
-                                    double randomNumber = 0.5 + (Math.random() * (1.8 - 0.5));
-                                    VidaPLayer2 = VidaPLayer2 - (DefensaPLayer2 -AtaquePLayer1 * randomNumber);
-                                    if (randomNumber>1.3){
-                                        System.out.println("Golpe critico");
-                                        System.out.println("el ataque fue de:");
-                                        System.out.println("la vida del jugador 2 es de"+VidaPLayer2);
+                                    double daño = ataquePlayer1 * (0.5 + Math.random());
+                                    if (defensaPlayer2 > 0) {
+                                        defensaPlayer2 -= daño;
+                                        if (defensaPlayer2 < 0) {
+                                            vidaPlayer2 += defensaPlayer2;
+                                            defensaPlayer2 = 0;
+                                        }
+                                    } else {
+                                        vidaPlayer2 -= daño;
+                                    }
+                                    ultiPlayer1++;
+                                    System.out.println("Jugador 1 atacó causando " + daño + " de daño.");
+                                    System.out.println("la vida restante del jugador 2 es de"+vidaPlayer2);
+                                    break;
+                                case 2:
+                                    vidaPlayer1 = Math.min(vidaPlayer1 + 100, vidaMaximaPlayer1);
+                                    System.out.println("Jugador 1 se curó. Vida actual: " + vidaPlayer1);
+                                    break;
+                                case 3:
+                                    if (ultiPlayer1 >= 3) {
+                                        System.out.println("Jugador 1 usó su ulti. ¡Daño devastador!");
+                                        vidaPlayer2 -= ataquePlayer1 * 2;
+                                        ultiPlayer1 = 0;
+                                    } else {
+                                        System.out.println("No tienes suficientes ataques para usar la ulti.");
                                     }
                                     break;
-                                case 2:
-                                    break;
-                                case 3:
-                                    break;
                                 case 4:
+                                    System.out.println("Jugador 1 usó su habilidad especial.");
+
                                     break;
-
-
-
                             }
-                            System.out.println("turno jugador 2");
-
-
-
-                        }else{
-                            System.out.println("comienza atacando jugador 2");
-                            System.out.println("comienza el turno de jugador 2");
-                            System.out.println("- pulse 1 para atacar");
-                            System.out.println("-pulse 2 para usar pocion curativa");
-                            System.out.println("pulse 3 para usar ulti(necesitas 3 ataques para poder usarla)");
-                            System.out.println("-pulse 4 para usar habilidad");
-
-                            boton = scanner.nextInt();
-                            switch (boton){
+                            turno = 2;
+                        } else {
+                            switch (accion) {
                                 case 1:
-                                    System.out.println("jugador 2 ataco");
+                                    double daño = ataquePlayer2 * (0.5 + Math.random());
+                                    if (defensaPlayer1 > 0) {
+                                        defensaPlayer1 -= daño;
+                                        if (defensaPlayer1 < 0) {
+                                            vidaPlayer1 += defensaPlayer1;
+                                            defensaPlayer1 = 0;
+                                        }
+                                    } else {
+                                        vidaPlayer1 -= daño;
+                                    }
+                                    ultiPlayer2++;
+                                    System.out.println("Jugador 2 atacó causando " + daño + " de daño.");
+                                    System.out.println("la vida restante del jugador 1 es de"+vidaPlayer1);
                                     break;
                                 case 2:
+                                    vidaPlayer2 = Math.min(vidaPlayer2 + 100, vidaMaximaPlayer2);
+                                    System.out.println("Jugador 2 se curó. Vida actual: " + vidaPlayer2);
                                     break;
                                 case 3:
+                                    if (ultiPlayer2 >= 3) {
+                                        System.out.println("Jugador 2 usó su ulti. ¡Daño devastador!");
+                                        vidaPlayer1 -= ataquePlayer2 * 2;
+                                        ultiPlayer2 = 0;
+                                    } else {
+                                        System.out.println("No tienes suficientes ataques para usar la ulti.");
+                                    }
                                     break;
-                                case 4:
-                                    break;
-
-
-
                             }
-
+                            turno = 1;
                         }
 
-
-                    }while(VidaPLayer1 >= 0 && VidaPLayer2 >= 0);
-
-                    break; //aqui acaba caso 3
-
-                case 4:
-                    System.out.println("salio del programa");
+                        if (vidaPlayer1 <= 0) {
+                            System.out.println("¡Jugador 2 ganó!");
+                            juegoTerminado = true;
+                        } else if (vidaPlayer2 <= 0) {
+                            System.out.println("¡Jugador 1 ganó!");
+                            juegoTerminado = true;
+                        }
+                    }
                     break;
 
+                case 4:
+                    System.out.println("Gracias por jugar. ¡Adiós!");
+                    break;
+
+                default:
+                    System.out.println("Opción inválida. Intente de nuevo.");
             }
         } while (opcion != 4);
 
-
+        scanner.close();
     }
 }
 
