@@ -73,7 +73,7 @@ public class MyMath {
 
     public static long factorial(int number) {
         if (number < 0) {
-            throw new IllegalArgumentException("El factorial no está definido para números negativos");
+           System.out.println("El factorial no está definido para números negativos");
         }
         long result = 1;
         for (int i = 2; i <= number; i++) {
@@ -84,7 +84,7 @@ public class MyMath {
 
     public static long factorialRecursive(int number) {
         if (number < 0) {
-            throw new IllegalArgumentException("El factorial no está definido para números negativos");
+            System.out.println("El factorial no está definido para números negativos");
         }
         if (number == 0 || number == 1) {
             return 1;
